@@ -1,7 +1,6 @@
 'use strict'
 
 const webpack = require('webpack')
-const compact = require('lodash/array/compact')
 
 const optimize = webpack.optimize
 
@@ -23,13 +22,8 @@ module.exports = {
   },
   target: 'web',
   bail: true,
-  plugins: compact([
+  plugins: [
     new webpack.BannerPlugin(banner),
-    new optimize.DedupePlugin(),
-    minify ?
-    new optimize.UglifyJsPlugin({
-      mangle: true,
-      comments: /PostgREST Client/
-    }) : null
-  ])
+    new optimize.DedupePlugin()
+  ]
 }

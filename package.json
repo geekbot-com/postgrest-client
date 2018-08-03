@@ -16,7 +16,7 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "lib"
+    "dist"
   ],
   "scripts": {
     "test": "$(npm bin)/mocha -r babel-polyfill -r babel-register test/*.test.js",
