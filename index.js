@@ -1,7 +1,7 @@
-var PostgREST = require('./dist/lib/Api').default
+var PostgREST = require('./lib/Api').default
 
 PostgREST.default = PostgREST
-PostgREST.Api = require('./dist/lib/Api').default
-PostgREST.ApiRequest = require('./dist/lib/ApiRequest').default
+PostgREST.Api = require('./lib/Api').default
+PostgREST.ApiRequest = require('./lib/ApiRequest').default
 
 module.exports = PostgREST
