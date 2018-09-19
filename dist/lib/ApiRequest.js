@@ -172,6 +172,9 @@ var ApiRequest = function (_Request) {
       return new Promise(function (resolve, reject) {
         return _get(ApiRequest.prototype.__proto__ || Object.getPrototypeOf(ApiRequest.prototype), 'end', _this2).call(_this2, function (error, response) {
           if (error) {
+            if (error.response && error.response.body && error.response.body.message) {
+              return reject(new Error("PostgREST error: " + error.response.body.message));
+            }
             return reject(error);
           }
 
